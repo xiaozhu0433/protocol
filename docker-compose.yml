@@ -1,0 +1,19 @@
+services:
+  demo:
+    build:
+      context: .
+      dockerfile: demo-app/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # 想接真模型就取消下面几行的注释
+      # MODEL: openai
+      # MODEL_BASE: https://api.openai.com/v1
+      # MODEL_KEY: sk-xxx
+      # MODEL_NAME: gpt-4o-mini
+      PORT: "8000"
+    volumes:
+      - demo-data:/data
+
+volumes:
+  demo-data:
